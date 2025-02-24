@@ -1,0 +1,42 @@
+<h2>Reserva tu película</h2>
+
+<!-- Seleccionar película -->
+<mat-form-field appearance="outline">
+  <mat-label>Película</mat-label>
+  <mat-select [(ngModel)]="selectedMovie">
+    <mat-option *ngFor="let movie of movies" [value]="movie">
+      {{ movie.title }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Seleccionar sala -->
+<mat-form-field appearance="outline">
+  <mat-label>Sala</mat-label>
+  <mat-select [(ngModel)]="selectedRoom">
+    <mat-option *ngFor="let room of rooms" [value]="room">
+      {{ room.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Seleccionar fecha con DatePicker -->
+<mat-form-field appearance="outline">
+  <mat-label>Fecha</mat-label>
+  <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="validateDate()" placeholder="Elige una fecha">
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<!-- Seleccionar horario -->
+<mat-form-field appearance="outline">
+  <mat-label>Horario</mat-label>
+  <mat-select [(ngModel)]="selectedTime">
+    <mat-option *ngFor="let time of availableTimes" [value]="time">
+      {{ time }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Botón para continuar -->
+<button mat-raised-button color="primary" (click)="proceedToSeats()">Seleccionar Asientos</button>

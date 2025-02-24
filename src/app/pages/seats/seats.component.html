@@ -1,0 +1,14 @@
+<p>seats works!</p>
+<h2>Selecciona tus Asientos</h2>
+
+<div class="seating">
+  <div *ngFor="let row of seats; let rowIndex = index" class="row">
+    <button *ngFor="let seat of row; let colIndex = index"
+            [class.selected]="seats[rowIndex][colIndex]"
+            (click)="toggleSeat(rowIndex, colIndex)">
+      {{ rowIndex * seats[0].length + colIndex + 1 }}
+    </button>
+  </div>
+</div>
+
+<button mat-raised-button color="primary" (click)="confirmReservation()">Confirmar Reserva</button>
