@@ -1,42 +1,25 @@
+# 🎬 CineApp Frontend 🎭
 
+¡Bienvenido al frontend de CineApp! Esta aplicación permite a los usuarios seleccionar películas, salas y horarios, así como reservar sus asientos de manera sencilla.  
 
-Tecnologías Utilizadas
+## 🚀 Tecnologías utilizadas  
 
-Angular 18
-Angular Material
-TypeScript
-RxJS
-TailwindCSS
-Requisitos Previos
+- 🅰️ **Angular 18** - Framework principal  
+- 🎨 **Angular Material** - UI moderna y responsiva  
+- 🌐 **TypeScript** - Tipado fuerte y mejor mantenibilidad  
+- ⚡ **RxJS** - Manejo de datos reactivo  
+- 📡 **API REST** - Conexión con el backend en Express  
 
-Antes de ejecutar el proyecto, asegúrate de tener instalado:
+## 📦 Instalación y ejecución  
 
-Node.js 20 o superior
-Angular CLI
-Instalación
+### 🔧 Requisitos previos  
+📌 Asegúrate de tener instalado:  
+- [Node.js](https://nodejs.org/) (versión 18 o superior)  
+- [Angular CLI](https://angular.io/cli)  
 
-Clonar el repositorio:
-git clone https://github.com/tu-repo/frontend-cine.git
-cd frontend-cine
-Instalar dependencias:
+### ▶️ Pasos para correr el proyecto  
+
+1️⃣ Instalar las dependencias:  
 npm install
-Ejecución
 
-Para iniciar el servidor de desarrollo:
-
-ng serve
-Accede a la aplicación en http://localhost:4200/
-
-
-
-Selección de película, sala y horario.
-Visualización de asientos ocupados y disponibles.
-Reservación de asientos con validación en tiempo real.
-Consumo de API en Express con MongoDB.
-Próximos Pasos
-
-Implementación de autenticación de usuario.
-Mejoras en la interfaz de usuario.
-Optimización del rendimiento con lazy loading.
-
-
+para ejecutarlo solo es necesiario npm run start !
