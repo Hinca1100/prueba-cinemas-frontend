@@ -1,0 +1,21 @@
+.home-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+  }
