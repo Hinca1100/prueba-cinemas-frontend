@@ -1,0 +1,20 @@
+<h2>Agregar Película</h2>
+
+<form [formGroup]="movieForm" (ngSubmit)="addMovie()">
+  <label>
+    Título:
+    <input formControlName="title">
+  </label>
+
+  <label>
+    Género:
+    <input formControlName="genre">
+  </label>
+
+  <label>
+    Duración (min):
+    <input type="number" formControlName="duration">
+  </label>
+
+  <button type="submit" [disabled]="movieForm.invalid">Agregar Película</button>
+</form>

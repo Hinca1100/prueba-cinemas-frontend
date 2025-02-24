@@ -1,0 +1,20 @@
+<h2>Editar Película</h2>
+
+<form [formGroup]="movieForm" (ngSubmit)="updateMovie()">
+  <label>
+    Título:
+    <input formControlName="title">
+  </label>
+
+  <label>
+    Género:
+    <input formControlName="genre">
+  </label>
+
+  <label>
+    Duración (min):
+    <input type="number" formControlName="duration">
+  </label>
+
+  <button type="submit" [disabled]="movieForm.invalid">Guardar Cambios</button>
+</form>

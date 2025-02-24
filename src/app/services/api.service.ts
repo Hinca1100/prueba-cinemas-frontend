@@ -3,18 +3,34 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl = 'http://localhost:3000'; // Asegúrate de que coincide con el backend
+  private apiUrl = 'http://localhost:3000'; // Ajusta según tu backend
 
   constructor(private http: HttpClient) {}
 
-  getMovies(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/movies`);
+  getMovies(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/movies`);
   }
 
-  createReservation(data: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/reservations`, data);
+  getMovieById(id: string): Observable<any> { // ✅ Agregado
+    return this.http.get<any>(`${this.apiUrl}/movies/${id}`);
+  }
+
+  createMovie(movieData: any) {
+    return this.http.post('http://localhost:3000/movies', movieData);
+  }
+
+  addMovie(movieData: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/movies`, movieData);
+  }
+
+  updateMovie(id: any, movie: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/movies/${id}`, movie);
+  }
+
+  deleteMovie(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/movies/${id}`);
   }
 }
