@@ -23,3 +23,7 @@
 npm install
 
 para ejecutarlo solo es necesiario npm run start !
+
+
+tambien si se quiere eliminar, editar o agregar una pelicula se puede desde esta ruta 
+http://localhost:4200/movies

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../enviorement';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RoomService {
-  private apiUrl = 'http://localhost:3000/rooms'; // URL del backend
+  private apiUrl : string = environment.apiUrl + '/rooms'; // URL del backend
 
   constructor(private http: HttpClient) {}
 

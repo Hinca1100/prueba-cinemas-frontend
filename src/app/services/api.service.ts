@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { environment } from '../../enviorement';
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root',  // El servicio está disponible a nivel de toda la aplicación
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000'; 
+  private apiUrl : string = environment.apiUrl
 
   constructor(private http: HttpClient) {}
 
@@ -14,12 +14,12 @@ export class ApiService {
     return this.http.get<any[]>(`${this.apiUrl}/movies`);
   }
 
-  getMovieById(id: string): Observable<any> { 
+  getMovieById(id: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/movies/${id}`);
   }
 
   createMovie(movieData: any) {
-    return this.http.post('http://localhost:3000/movies', movieData);
+    return this.http.post(`${this.apiUrl}/movies`, movieData);
   }
 
   addMovie(movieData: any): Observable<any> {
