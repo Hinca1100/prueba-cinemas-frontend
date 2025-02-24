@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000'; // Ajusta según tu backend
+  private apiUrl = 'http://localhost:3000'; 
 
   constructor(private http: HttpClient) {}
 
@@ -14,7 +14,7 @@ export class ApiService {
     return this.http.get<any[]>(`${this.apiUrl}/movies`);
   }
 
-  getMovieById(id: string): Observable<any> { // ✅ Agregado
+  getMovieById(id: string): Observable<any> { 
     return this.http.get<any>(`${this.apiUrl}/movies/${id}`);
   }
 

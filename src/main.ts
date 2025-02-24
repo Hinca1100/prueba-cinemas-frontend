@@ -6,10 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { importProvidersFrom } from '@angular/core';
 import { provideHttpClient } from '@angular/common/http';
 
-// Angular Material Providers
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTableModule } from '@angular/material/table'; // ✅ Asegurar que esté importado
+import { MatTableModule } from '@angular/material/table'; 
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
@@ -26,11 +26,11 @@ bootstrapApplication(AppComponent, {
       BrowserAnimationsModule,
       MatButtonModule,
       MatToolbarModule,
-      MatTableModule, // ✅ Verificar que esté aquí
+      MatTableModule,
       MatInputModule,
       MatIconModule,
       MatRadioModule,
-      MatPaginatorModule,  // ✅ Agregado
+      MatPaginatorModule,  
       MatSortModule 
     )
   ]

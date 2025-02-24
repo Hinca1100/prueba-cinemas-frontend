@@ -27,19 +27,19 @@ export class AddMovieComponent {
   }
 
   addMovie(): void {
-    console.log('Botón presionado, intentando agregar película...'); // 🛠️ Depuración
+    console.log('Botón presionado, intentando agregar película...'); // 
   
     if (this.movieForm.valid) {
       this.apiService.addMovie(this.movieForm.value).subscribe(() => {
-        console.log('Película agregada con éxito'); // 🛠️ Depuración
+        console.log('Película agregada con éxito'); 
         alert('Película agregada con éxito');
-        this.router.navigate(['/movies']); // Redirige a la lista de películas
+        this.router.navigate(['/movies']); 
       }, error => {
         console.error('Error al agregar película:', error);
         alert('Error al agregar la película');
       });
     } else {
-      console.warn('Formulario inválido, revisa los datos.'); // 🛠️ Depuración
+      console.warn('Formulario inválido, revisa los datos.'); 
     }
   }
 }

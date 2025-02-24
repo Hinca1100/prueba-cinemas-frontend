@@ -23,7 +23,7 @@ export class EditMovieComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // 🔹 Obtiene el ID si existe
+    
     this.movieId = this.route.snapshot.paramMap.get('id');
 
     this.movieForm = this.fb.group({
@@ -34,7 +34,7 @@ export class EditMovieComponent implements OnInit {
     });
 
     if (this.movieId) {
-      // 🔹 Si hay un ID, obtener la película
+      
       this.apiService.getMovieById(this.movieId).subscribe((movie) => {
         if (movie) {
           this.movieForm.patchValue(movie);
@@ -55,13 +55,11 @@ export class EditMovieComponent implements OnInit {
   saveMovie(): void {
     if (this.movieForm.valid) {
       if (this.movieId) {
-        // 🔹 Actualizar si tiene ID
         this.apiService.updateMovie(this.movieId, this.movieForm.value).subscribe(() => {
           alert('Película actualizada con éxito');
           this.router.navigate(['/movies']);
         });
       } else {
-        // 🔹 Crear si NO tiene ID
         this.apiService.createMovie(this.movieForm.value).subscribe(() => {
           alert('Película creada con éxito');
           this.router.navigate(['/movies']);

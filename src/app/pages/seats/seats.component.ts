@@ -44,7 +44,7 @@ export class SeatsComponent implements OnInit {
       this.loadOccupiedSeats();
     });
 
-    this.generateSeats(5, 10); // 5 filas, 10 columnas
+    this.generateSeats(5, 10); 
   }
 
   generateSeats(rows: number, cols: number): void {
